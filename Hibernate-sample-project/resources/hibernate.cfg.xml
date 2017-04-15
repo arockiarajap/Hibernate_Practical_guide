@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.PostgreSQLDialect
+		</property>
+		<property name="hibernate.connection.driver_class">
+			org.postgresql.Driver
+		</property>
+		<!-- <property name="hibernate.hbm2ddl.auto">create</property> -->
+		
+		<!-- Assume test is the database name -->
+		<property name="hibernate.connection.url">
+			jdbc:postgresql://localhost:5432/hrbook
+		</property>
+		<property name="hibernate.connection.username">
+			postgres
+		</property>
+		<property name="hibernate.connection.password">
+			root
+		</property>
+
+		<!-- <property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+		<property name="use_sql_comments">true</property> -->
+
+		<!-- List of XML mapping files -->
+		<mapping class="demo.entity.Address" />
+		<mapping class="demo.entity.Course" />
+		<mapping class="demo.entity.Person" />
+		<mapping class="demo.entity.PersonSchools" />
+		<mapping class="demo.entity.School" />
+		<mapping class="demo.entity.SchoolCourses" />
+		<mapping class="demo.entity.SSN" />
+		<mapping class="demo.entity.Citizenships" />
+		<mapping class="demo.entity.PersonAddress" />
+		<mapping class="demo.entity.SchoolAddress" />
+	</session-factory>
+</hibernate-configuration>
